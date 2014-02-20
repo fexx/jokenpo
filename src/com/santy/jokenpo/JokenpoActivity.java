@@ -2,6 +2,7 @@ package com.santy.jokenpo;
 
 import java.util.Random;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
@@ -65,25 +66,37 @@ public class JokenpoActivity extends Activity {
 					findViewById(R.id.imageView2).setBackgroundResource(R.drawable.empatou);
 				}else if(jogadaPlayer == 2){
 					findViewById(R.id.imageView2).setBackgroundResource(R.drawable.venceu);
+					MediaPlayer m = MediaPlayer.create(this, R.raw.win);
+					m.start();
 				}else{
 					findViewById(R.id.imageView2).setBackgroundResource(R.drawable.perdeu);
+					MediaPlayer m = MediaPlayer.create(this, R.raw.lose);
+					m.start();
 				}
 		}else if(jogadaPC == 2){
 			findViewById(R.id.imageView3).setBackgroundResource(R.drawable.papel);
 				if(jogadaPlayer == 1){
 					findViewById(R.id.imageView2).setBackgroundResource(R.drawable.perdeu);
+					MediaPlayer m = MediaPlayer.create(this, R.raw.lose);
+					m.start();
 				}else if(jogadaPlayer == 2){
 					findViewById(R.id.imageView2).setBackgroundResource(R.drawable.empatou);
 				}else{
 					findViewById(R.id.imageView2).setBackgroundResource(R.drawable.venceu);
+					MediaPlayer m = MediaPlayer.create(this, R.raw.win);
+					m.start();
 				}
 			
 		}else if(jogadaPC == 3){
 			findViewById(R.id.imageView3).setBackgroundResource(R.drawable.tesoura);
 				if(jogadaPlayer == 1){
 					findViewById(R.id.imageView2).setBackgroundResource(R.drawable.venceu);
+					MediaPlayer m = MediaPlayer.create(this, R.raw.win);
+					m.start();
 				}else if(jogadaPlayer == 2){
 					findViewById(R.id.imageView2).setBackgroundResource(R.drawable.perdeu);
+					MediaPlayer m = MediaPlayer.create(this, R.raw.lose);
+					m.start();
 				}else{
 					findViewById(R.id.imageView2).setBackgroundResource(R.drawable.empatou);
 				}
